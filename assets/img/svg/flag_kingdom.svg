@@ -1,0 +1,19 @@
+<svg id="Group_4_copy_2" data-name="Group 4 copy 2" xmlns="http://www.w3.org/2000/svg" width="70" height="50" viewBox="0 0 70 50">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #00166b;
+      }
+
+      .cls-1, .cls-2 {
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        fill: red;
+      }
+    </style>
+  </defs>
+  <path id="Color_Fill_2" data-name="Color Fill 2" class="cls-1" d="M1934,242l8-.018V246Zm0-14,8-4.5v4.518Zm-56,18.235v-4.254l9,0.019ZM1886,228l-8,.018V224Zm31,15,23.56,12.049A3.949,3.949,0,0,1,1938,256h-21V243Zm-14,0v13h-21a3.954,3.954,0,0,1-2.41-.827Zm0-16-23.41-12.173A3.954,3.954,0,0,1,1882,214h21v13Zm14,0V214h21a3.954,3.954,0,0,1,2.41.827Z" transform="translate(-1875 -210)"/>
+  <path id="Color_Fill_1" data-name="Color Fill 1" class="cls-2" d="M1924,242h6l12,5.931v3.25Zm-28.25-.035L1901,242l-22.51,11.877A3.972,3.972,0,0,1,1878,252v-1.016Zm-17.75-23L1896,228h-6l-12-5.931v-3.1ZM1914,239v17h-8V239h-28v-8h28V214h8v17h28v8h-28Zm11-11h-6l22.49-11.913A3.885,3.885,0,0,1,1942,218v1.126Z" transform="translate(-1875 -210)"/>
+</svg>
