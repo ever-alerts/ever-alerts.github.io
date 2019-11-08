@@ -87,7 +87,7 @@ $(function(){
           $linkBtn.attr('href', 'https://en.minter.wiki/How_to_create_wallet')
       }
 
-      $.get('/action.php', {}, function(data) {
+      $.get('./action.php', {}, function(data) {
           // TODO: сюда приходит массив, нужно определить какой сейчас на сайте язык и на какой менять
           // массив слов будет такого вида ['eng', 'chine', 'rus]
           // индекс eng 0 chine - 1 rus - 2 Соответсвенно если на сайте был английский то взять 0 индекс и если кликнули на русский то подставить 2 индекс
