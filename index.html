@@ -95,7 +95,7 @@
                 <h3 class="replacer">Enter your Minter wallet address</h3>
                 <h3 class="replacer mobil-h3">1.Enter your Minter wallet address</h3>
                 <form>
-                    <input type="text" placeholder="Format: Mx524d5f91b40ad6d1197e15221767e7e6e37fb464">
+                    <input type="text" id="inputAddr" placeholder="Format: Mx524d5f91b40ad6d1197e15221767e7e6e37fb464">
                     <a class="btn btn-left" href="https://console.minter.network/" target="_blank">
                         <span class="replacer">create wallet</span>
                         <svg viewBox="0 0 180 60" class="border" preserveAspectRatio="none">
@@ -119,28 +119,28 @@
                 <h3 class="replacer mobil-h3">2.pick up the alert</h3>
                 <div class="alert-items">
                     <div class="alert__item" tabindex="0">
-                        <img src="assets/img/alert-img/alert-img_01.png" alt="">
+                        <img src="assets/img/alert-img/alert-img_01.png" alt="" id="Img_1">
                     </div>
                     <div class="alert__item" tabindex="0">
-                        <img src="assets/img/alert-img/alert-img_02.png" alt="">
+                        <img src="assets/img/alert-img/alert-img_02.png" alt="" id="Img_2">
                     </div>
                     <div class="alert__item" tabindex="0">
-                        <img src="assets/img/alert-img/alert-img_03.png" alt="">
+                        <img src="assets/img/alert-img/alert-img_03.png" alt="" id="Img_3">
                     </div>
                     <div class="alert__item" tabindex="0">
-                        <img src="assets/img/alert-img/alert-img_04.png" alt="">
+                        <img src="assets/img/alert-img/alert-img_04.png" alt="" id="Img_4">
                     </div>
                     <div class="alert__item" tabindex="0">
-                        <img src="assets/img/alert-img/alert-img_05.png" alt="">
+                        <img src="assets/img/alert-img/alert-img_05.png" alt="" id="Img_5">
                     </div>
                     <div class="alert__item" tabindex="0">
-                        <img src="assets/img/alert-img/alert-img_06.png" alt="">
+                        <img src="assets/img/alert-img/alert-img_06.png" alt="" id="Img_6">
                     </div>
                     <div class="alert__item" tabindex="0">
-                        <img src="assets/img/alert-img/alert-img_07.png" alt="">
+                        <img src="assets/img/alert-img/alert-img_07.png" alt="" id="Img_7">
                     </div>
                     <div class="alert__item" tabindex="0">
-                        <img src="assets/img/alert-img/alert-img_08.png" alt="">
+                        <img src="assets/img/alert-img/alert-img_08.png" alt="" id="Img_8">
                     </div>
                 </div>
             </div>
@@ -150,12 +150,12 @@
             <h3 class="replacer">Generate link,</h3>
             <h3 class="replacer mobil-h3">3.Generate link,</h3>
             <p class="replacer">Then paste it into OBS or your SOFTWARE</p>
-            <button class="btn">
+            <button class="btn" onclick="generate()">
                 <span class="btn-effect gradient-03"></span>
                 <span class="replacer btn-text">Generate link</span>
             </button>
             <form>
-                <input type="text" placeholder="The generated link will appear here, which you will need to insert">
+                <input type="text" id="outputAddr" placeholder="The generated link will appear here, which you will need to insert">
                 <button class="btn">
                     <div class="wrap">
                         <span class="btn-effect gradient-04"></span>
@@ -174,8 +174,9 @@
         <div class="container-big">
             <h3 class="replacer">examples</h3>
 			<div class="video">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/SF9yunc4e50" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="560" height="315" src="https://player.twitch.tv/?autoplay=false&video=v489800971" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
+<!--            <iframe src="https://player.twitch.tv/?autoplay=false&video=v489800971" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620"></iframe><a href="https://www.twitch.tv/videos/489800971?tt_content=text_link&tt_medium=vod_embed" style="padding:2px 0px 4px; display:block; width:345px; font-weight:normal; font-size:10px; text-decoration:underline;">Смотрите Демонстрация 2 от f0xxxu на www.twitch.tv</a>-->
             <!--<div class="video-items">
                 <div class="video__item">
                     <div class="video">
@@ -267,7 +268,7 @@
                 </div>
             </div>
             <div class="container-small">
-                <a class="btn" href="https://minter.1001btc.com/en/" target="_blank">
+                <a class="btn" href="https://bip.dev/card" target="_blank">
                     <span class="btn-effect gradient-05"></span>
                     <span class="replacer btn-text">Exchange your coins here</span>
                 </a>
@@ -303,5 +304,6 @@
     <script src="assets/js/jQuery.min.js"></script>
     <script src="slick/slick.min.js"></script>
     <script src="assets/js/custom.js"></script>
+    <script src="assets/js/indexscripts.js"></script>
 </body>
 </html>
