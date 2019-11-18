@@ -54,7 +54,7 @@ input {
 }
 
 input::placeholder {
-    font: 24px/80px SegoeUIBold, sans-serif;
+    font: 15px/80px SegoeUIBold, sans-serif;
     color: #d2d4db;
 }
 
