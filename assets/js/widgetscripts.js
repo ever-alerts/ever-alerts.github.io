@@ -98,10 +98,10 @@ var max_txn;
 const app = document.getElementById('root');
 var logo = document.createElement('img');
 logo.type = "image";
-logo.src = urlImg;
+logo.src = '.'+urlImg;
 
 const sfx = new Audio();
-sfx.src = 'storage/sfx/11119_1393961437.mp3';
+sfx.src = 'assets/sfx/11119_1393961437.mp3';
 
 var message = document.createElement('p');
 message.type = "text";
