@@ -560,8 +560,8 @@ h2 {
 }
 
 .generate form input {
-    padding-right: 271px;
-    width: calc(100% - 301px);
+    /*padding-right: 271px;*/
+    width: calc(100% - 50px);
 }
 
 .generate form span {
