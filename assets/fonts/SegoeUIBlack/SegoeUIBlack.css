@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'SegoeUIBlack';
+    src: url('fonts/SegoeUIBlack/SegoeUIBlack.eot');
+    src: url('fonts/SegoeUIBlack/SegoeUIBlack.eot') format('embedded-opentype'),
+         url('fonts/SegoeUIBlack/SegoeUIBlack.woff2') format('woff2'),
+         url('fonts/SegoeUIBlack/SegoeUIBlack.woff') format('woff'),
+         url('fonts/SegoeUIBlack/SegoeUIBlack.ttf') format('truetype'),
+         url('fonts/SegoeUIBlack/SegoeUIBlack.svg#SegoeUIBlack') format('svg');
+}

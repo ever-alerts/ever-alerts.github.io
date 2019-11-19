@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'SegoeUIRegular';
+    src: url('/font/SegoeUIRegular/SegoeUIRegular.eot');
+    src: url('/font/SegoeUIRegular/SegoeUIRegular.eot') format('embedded-opentype'),
+         url('/font/SegoeUIRegular/SegoeUIRegular.woff') format('woff'),
+         url('/font/SegoeUIRegular/SegoeUIRegular.ttf') format('truetype');
+}

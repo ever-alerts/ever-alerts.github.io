@@ -1,0 +1,28 @@
+<svg id="money" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="90" height="60" viewBox="0 0 90 60">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #2e79f6;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        fill: #00b3fd;
+      }
+
+      .cls-3 {
+        fill: url(#linear-gradient);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="458" y1="3592.03" x2="458" y2="3553.03" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#003182"/>
+      <stop offset="1" stop-color="#00b3fd"/>
+    </linearGradient>
+  </defs>
+  <path id="Rectangle_3_copy_28" data-name="Rectangle 3 copy 28" class="cls-1" d="M496,3582h-0.062c-0.323,5.3-4.043,10.56-11.222,14.62-14.923,8.45-38.981,8.52-53.737.17-7.207-4.08-10.836-9.41-10.949-14.79H420v-8.01h2.57a25.451,25.451,0,0,1,8.712-7.61c14.923-8.45,38.981-8.52,53.736-.17a24.179,24.179,0,0,1,8.7,7.78H496V3582Z" transform="translate(-413 -3548.03)"/>
+  <path id="Rectangle_3_copy_29" data-name="Rectangle 3 copy 29" class="cls-2" d="M485.018,3559.23c14.756,8.34,14.62,21.93-.3,30.37s-38.981,8.51-53.737.17-14.619-21.94.3-30.37S470.263,3550.89,485.018,3559.23Z" transform="translate(-413 -3548.03)"/>
+  <path id="Rectangle_3_copy_30" data-name="Rectangle 3 copy 30" class="cls-3" d="M430.979,3585.79c-6.416-3.63-10.009-8.26-10.8-13.02,0.789-4.87,4.484-9.63,11.106-13.37,14.923-8.43,38.981-8.51,53.736-.17,6.416,3.63,10.01,8.25,10.8,13-0.789,4.88-4.483,9.64-11.105,13.39C469.793,3594.07,445.735,3594.14,430.979,3585.79Z" transform="translate(-413 -3548.03)"/>
+</svg>

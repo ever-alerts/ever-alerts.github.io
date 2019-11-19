@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="80" height="60" viewBox="0 0 80 60">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3 {
+        fill-rule: evenodd;
+      }
+
+      .cls-1 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-2 {
+        fill: url(#linear-gradient-2);
+      }
+
+      .cls-3 {
+        fill: url(#linear-gradient-3);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="755" y1="3542.5" x2="831" y2="3542.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1d53da"/>
+      <stop offset="1" stop-color="#3e74fb"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="755" y1="3535.5" x2="831" y2="3535.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#039af7"/>
+      <stop offset="1" stop-color="#00b8fe"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="791.14" y1="3548.03" x2="791.14" y2="3514.03" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#003182"/>
+      <stop offset="1" stop-color="#00b3fd"/>
+    </linearGradient>
+  </defs>
+  <path id="Rectangle_3_copy_14" data-name="Rectangle 3 copy 14" class="cls-1" d="M831,3543h-0.063c-0.322,5.3-4.042,10.56-11.221,14.62-14.923,8.45-38.982,8.52-53.737.17-7.207-4.08-10.836-9.41-10.949-14.79H755v-8.01h2.57a25.451,25.451,0,0,1,8.712-7.61c14.923-8.45,38.981-8.52,53.736-.17a24.179,24.179,0,0,1,8.7,7.78H831V3543Z" transform="translate(-753 -3509.03)"/>
+  <path id="Rectangle_3_copy_15" data-name="Rectangle 3 copy 15" class="cls-2" d="M820.018,3520.23c14.756,8.34,14.62,21.93-.3,30.37s-38.982,8.51-53.737.17-14.619-21.94.3-30.37S805.263,3511.89,820.018,3520.23Z" transform="translate(-753 -3509.03)"/>
+  <path id="Rectangle_3_copy_17" data-name="Rectangle 3 copy 17" class="cls-3" d="M819.716,3541.62c-14.923,8.45-38.982,8.52-53.737.17-5.3-3-8.652-6.69-10.112-10.56,1.5-3.96,4.954-7.74,10.415-10.83,13.81-7.8,35.431-8.43,50.275-1.88L794,3528.05l32.4,8.48A28.45,28.45,0,0,1,819.716,3541.62Z" transform="translate(-753 -3509.03)"/>
+</svg>
