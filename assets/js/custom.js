@@ -56,7 +56,7 @@ $(function(){
 
     /////////////////
 
-    $('.lang').on('click', function() {
+    /*$('.lang').on('click', function() {
         let $this = $(this)
         let $parent = $this.parent()
         let activeLangIndex = null // это индекс замены текущего языка
@@ -117,12 +117,6 @@ $(function(){
                         if(flag) {
                             // перед перезаписью содержимого проверить есть ли текст вида www.minter.network то обурнуть в ссылку
                             // из за китайского языка не выходит функция split разбивает в 1 элемет мссива
-                            /* if(strReplace.includes('www.minter.network')) {
-                                 let newReplace = strReplace.replace(/www.minter.network/igm, '<a target="_blank" href="https://www.minter.network/ru">www.minter.network</a>')
-                                 $tag.html(newReplace)
-                             }else {
-                                 $tag.html(strReplace)
-                             }*/
                             $tag.html(strReplace)
                         }
                     }
@@ -132,7 +126,7 @@ $(function(){
         }, 'json')
 
 
-    })
+    })*/
 
     $('body').on('click', '.js-copied', function(e) {
         e.preventDefault()
