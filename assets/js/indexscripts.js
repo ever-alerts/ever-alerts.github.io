@@ -6,8 +6,12 @@ let imagesource = null;
 let sfxsource = null;
 
 
-function generate() {
-    outputAddr.value = 'http://minteralerts.com/widget.html?addr='+inputAddr.value+'&imgsrc='+imagesource;
+function generate(lang) {
+    if (lang==undefined){
+        lang = 'en'
+    }
+
+    outputAddr.value = 'http://minteralerts.com/widget.html?addr='+inputAddr.value+'&imgsrc='+imagesource+'&lang='+lang;
 }
 
 function sfxGetter(id) {
