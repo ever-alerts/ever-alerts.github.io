@@ -9,6 +9,8 @@ let sfxsource = null;
 function generate(lang) {
     if (lang==undefined){
         lang = 'en'
+    }else{
+        lang = lang.lngnow;
     }
 
     outputAddr.value = 'http://minteralerts.com/widget.html?addr='+inputAddr.value+'&imgsrc='+imagesource+'&lang='+lang;
