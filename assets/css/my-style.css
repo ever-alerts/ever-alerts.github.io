@@ -149,6 +149,7 @@ input::placeholder {
 }
 
 .telegram svg,
+.alert svg,
 .wallet-number .btn svg {
   position: absolute;
   left: 0;
@@ -165,18 +166,21 @@ input::placeholder {
   height: 42px;
 }
 
-.wallet-number .btn svg {
+.wallet-number .btn svg,
+.alert .btn svg {
     width: 222px;
     height: 44px;
 }
 
 .telegram:hover,
+.alert .btn:hover,
 .wallet-number .btn:hover {
   transition: .8s ease-in-out;
   background: #4F95DA;
 }
 
 .telegram:hover svg,
+.alert:hover .btn:hover svg,
 .wallet-number .btn:hover svg {
   stroke-dashoffset: -480;
 }
@@ -323,7 +327,26 @@ header .container-big {
 .nav li a {
     color: #323232;
 }
-
+.next-txt {
+    position: relative;
+}
+.next-txt:after {
+    content: '';
+    position: absolute;
+    top: 6px;
+    right: -18px;
+    width: 7px;
+    height: 11px;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAALAQMAAACJXgXrAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABlBMVEX///////9VfPVsAAAAAXRSTlMAQObYZgAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAATSURBVAjXYxBgQIaTGEIYLBgEAA0AAZ/1pm/pAAAAAElFTkSuQmCC');
+}
+.input-subtext {
+    width: 100%;
+    margin: -22px 0 30px;
+    text-align: left;
+    color: #c5cce2;
+    font-size: 16px;
+    text-decoration: underline;
+}
 .menu .btn {
     width: 197px;
     font: 20px/50px SegoeUIRegular, sans-serif;
@@ -464,7 +487,11 @@ h2 {
 .wallet-number form input {
     text-align: center;
 }
-
+.wallet-number form input::placeholder,
+.generate form input::placeholder {
+    font-size: 26px;
+}
+.alert .btn,
 .wallet-number .btn {
     width: 222px;
     border: 1px solid #f655a0;
@@ -499,6 +526,7 @@ h2 {
     align-content: center;
 	justify-content: center;
     margin: 0 -10px;
+    padding-bottom: 10%;
 }
 
 .alert__item {
@@ -509,14 +537,14 @@ h2 {
     cursor: pointer;
     outline: none;
 }
-
 .alert__item:hover {
     border: 1px solid #284f6b;
     width: 245px;
     padding: 25px 0;
 }
 
-.alert__item:focus {
+.alert__item:focus,
+.alert__item.focus {
     background: rgba(255, 255, 255, 0.2);
 }
 
@@ -1204,9 +1232,11 @@ footer p a:hover {
     .order-process {
         padding: 40px 0;
     }
-
-    .order-process h3 {
+    .wallet-number h3 {
         display: none;
+    }
+    .order-process h3 {
+        font-size: 0;
     }
 
     .order-process .mobil-h3 {
@@ -1430,6 +1460,10 @@ footer p a:hover {
     .information .container-small p {
         line-height: 30px;
     }
+    .input-subtext {
+        text-align: center;
+        font-size: 12px;
+    }
 
 }
 
@@ -1444,7 +1478,9 @@ footer p a:hover {
     input::placeholder {
         font-size: 12px;
     }
-
+    .input-subtext {
+        margin-top: 0;
+    }
     /*===== Top-Slide 375px ====================*/
 	
     h1 {

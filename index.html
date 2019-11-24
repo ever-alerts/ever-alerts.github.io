@@ -108,7 +108,8 @@
                 <h3 class="replacer mobil-h3" lng="enter_your_wallet">1.Enter your Minter wallet address</h3>
                 <form>
                     <input type="text" id="inputAddr" placeholder="Format: Mx4e7ddc092d4fa12c44792d9a6ffdba6122900df1">
-                    <a class="btn btn-left" hl = "console_minter" href="https://console.minter.network/" target="_blank">
+                    <a target="_blank" href="https://en.minter.wiki/How_to_create_wallet" class="input-subtext">Don't have a wallet? Look how to create it.</a>
+                    <!--<a class="btn btn-left" hl = "console_minter" href="https://console.minter.network/" target="_blank">
                         <span class="replacer" lng="create_wallet">create wallet</span>
                         <svg viewBox="0 0 180 60" class="border" preserveAspectRatio="none">
                           <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
@@ -121,14 +122,21 @@
                           <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
                           <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
                         </svg>
-                    </a>
+                    </a>-->
+                    <button type="button" data-target="alert-scroll" class="btn js-to-scroll-next js-replace-link" hl = "how_to_wallet">
+                        <span class="replacer next-txt" lng="instruction">next</span>
+                        <svg viewBox="0 0 180 60" class="border" preserveAspectRatio="none">
+                            <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
+                            <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
+                        </svg>
+                    </button>
                 </form>
             </div>
             <!--End Wallet-Number-->
             <!--Start Alert-->
             <div class="alert" id="alerts">
-                <h3 class="replacer" lng="pick_up_the_image">pick up the image</h3>
-                <h3 class="replacer mobil-h3" lng="pick_up_the_image">2.pick up the image</h3>
+                <h3 class="alert-scroll replacer" lng="pick_up_the_image">pick up the image</h3>
+                <h3 class="alert-scroll replacer mobil-h3" lng="pick_up_the_image">2.pick up the image</h3>
                 <div class="alert-items">
                     <div class="alert__item" tabindex="0">
                         <img src="assets/img/alert-img/alert-img_01.png" alt="" id="Img_1">
@@ -155,11 +163,18 @@
                         <img src="assets/img/alert-img/alert-img_08.png" alt="" id="Img_8">
                     </div>
                 </div>
+                <button type="button" data-target="generate-title" class="btn js-to-scroll-next js-replace-link" hl = "how_to_wallet">
+                    <span class="replacer next-txt" lng="instruction">next</span>
+                    <svg viewBox="0 0 180 60" class="border" preserveAspectRatio="none">
+                        <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
+                        <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
+                    </svg>
+                </button>
             </div>
         <!--End Alert-->
         <!--Start Generate-->
-        <div class="generate">
-            <h3 class="replacer" lng="generate_link">Generate link,</h3>
+        <div id="generate" class="generate">
+            <h3 class="replacer generate-title" lng="generate_link">Generate link,</h3>
             <h3 class="replacer mobil-h3" lng="generate_link">3.Generate link,</h3>
             <p class="replacer" lng="paste_it_into_obs">Then paste it into OBS or your SOFTWARE</p>
             <button class="btn" onclick="generate(LANGUAGE)">
@@ -167,7 +182,7 @@
                 <span class="replacer btn-text" lng="generate">Generate link</span>
             </button>
             <form>
-                <input type="text" id="outputAddr" placeholder="The generated link will appear here, which you will need to insert">
+                <input type="text" id="outputAddr" placeholder="The generated link will appear here">
                 <button class="btn">
                     <div class="wrap">
                         <span class="btn-effect gradient-04"></span>

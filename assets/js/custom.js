@@ -72,8 +72,18 @@ $(function(){
 
         _this.text(strCopied)
 
+    }).on('click', '.alert__item', function() {
+        $(this).siblings().removeClass('focus')
+        $(this).addClass('focus')
     })
-
+    // скрол по кнопке next
+    $('.js-to-scroll-next').on('click', function(e) {
+        let $target = $(this).data('target');
+        if($target) {
+            $('html, body').animate({ scrollTop: $("."+$target).offset().top-30 }, 500);
+        }
+        return false;
+    });
 });
 
 $('.slider-gallery').slick({
