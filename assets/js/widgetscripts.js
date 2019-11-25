@@ -69,7 +69,7 @@ function getTitlefromMinterscan(incomAddr){
                 let inc = JSON.parse(this.response);
                 outb = inc.title;
             } else {
-                outb = 'Кто-то';
+                outb = 'Somebody';
             }
 
         };
@@ -144,7 +144,7 @@ if ((max_txn > last_txn)&&(income.data[0].data.to == urlAddr)){
         card.setAttribute('class', 'card');
         console.log(max_txn_obj.from);
 
-        message.textContent = getTitlefromMinterscan(max_txn_obj.from)+' прислал ' + (getSum(max_txn_obj.data.value)) + ' ' + max_txn_obj.data.coin + "!";
+        message.textContent = getTitlefromMinterscan(max_txn_obj.from)+' just sent you ' + (getSum(max_txn_obj.data.value)) + ' ' + max_txn_obj.data.coin + "!";
         if (max_txn_obj.payload !== ""){comment.textContent = b64DecodeUnicode(max_txn_obj.payload)}else{comment.textContent = ""};
         sfx.play();
         container.appendChild(logo);
