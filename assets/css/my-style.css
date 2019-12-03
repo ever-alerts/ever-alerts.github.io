@@ -1359,10 +1359,6 @@ footer p a:hover {
 }
 @media (max-width: 515px) {
 
-    .input-subtext {
-        display: none;
-    }
-
     /*===== Top-Slide 639px ====================*/
 
     h1 {
