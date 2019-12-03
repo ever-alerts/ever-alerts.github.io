@@ -123,7 +123,8 @@ setInterval(function () {
 var request = new XMLHttpRequest();
 request.open('GET','https://explorer-api.apps.minter.network/api/v1/addresses/'+urlAddr+'/transactions', true);
 //?addr=Mx5505f59922b452cb69587c93b5e52f8d0464f622
-
+//request.setRequestHeader('X-Project-Id','55b84e37-35e5-4585-9098-6bf1f24a9ada');
+//request.setRequestHeader('X-Project-Secret', 'f0e1bd9212c84e0aba1e35c83a9ab37c');
 request.onload = function () {
 
     var income =JSON.parse(this.response);
