@@ -4,6 +4,8 @@ var LANGUAGE;
 var LANGLNK;
 
 function redrawlng(lang) {
+        hideMenu()
+
         $.ajax({
 
             url: 'languages/' + lang + '.json', //тянем файл с языком

@@ -49,7 +49,7 @@ input {
     padding-right: 30px;
     border-radius: 7px;
     border: none;
-    font: 24px/80px SegoeUIBold, sans-serif;
+    font: 24px SegoeUIBold, sans-serif;
     color: #95969c;
 }
 
@@ -1357,8 +1357,11 @@ footer p a:hover {
     }
 
 }
-
 @media (max-width: 515px) {
+
+    .input-subtext {
+        display: none;
+    }
 
     /*===== Top-Slide 639px ====================*/
 
