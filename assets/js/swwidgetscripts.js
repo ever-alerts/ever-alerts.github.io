@@ -101,7 +101,7 @@ logo.type = "image";
 logo.src = 'https://minteralerts.com/assets/img/alert-img/Mando_giving.gif';
 
 const sfx = new Audio();
-sfx.src = 'assets/sfx/chewbacca_01.wav';
+sfx.src = 'assets/sfx/chewbacca_01.ogg';
 
 var message = document.createElement('p');
 message.type = "text";
