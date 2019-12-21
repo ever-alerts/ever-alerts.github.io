@@ -50,7 +50,7 @@ pc{
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 1200px) {
     .card {
         flex: 1 1 calc(50% - 2rem);
     }
