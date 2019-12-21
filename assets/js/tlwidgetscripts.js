@@ -98,10 +98,10 @@ var max_txn;
 const app = document.getElementById('root');
 var logo = document.createElement('img');
 logo.type = "image";
-logo.src = urlImg;
+logo.src = 'https://minteralerts.com/assets/img/alert-img/IMG_20191220_145245_309.jpg';
 
 const sfx = new Audio();
-sfx.src = 'assets/sfx/11119_1393961437.mp3';
+sfx.src = 'assets/sfx/rick_cut.mp3';
 
 var message = document.createElement('p');
 message.type = "text";
