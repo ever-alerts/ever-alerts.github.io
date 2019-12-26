@@ -30,7 +30,7 @@ function Transaction(id,from,coin,value,payload){
     this.value=value;
     this.payload=payload;
 }
-
+let arrayTransactions = new Array();
 
 
 
@@ -99,48 +99,73 @@ function getSum(str) {
     }
 }
 setInterval(function () {
-let request = new XMLHttpRequest();
-request.open('GET','https://explorer-api.apps.minter.network/api/v1/addresses/'+urlAddr+'/transactions', true);
-
-request.onload = function () {
-    let income = JSON.parse(this.response);
-    if (max_txn==0) {max_txn = Math.max.apply(Math, income.data.map(function(o) { return o.txn; }));};
-    console.log(income.data);
-    let arrayTransactions = new Array();
-    container.innerHTML = '';
-    income.data.forEach(function(item, i, arr){
-        if (item.txn>max_txn && item.data.value!==0 && item.data.to == urlAddr){
-            arrayTransactions.unshift(new Transaction(item.txn,item.from,item.data.coin,item.data.value,item.payload));
-        }
-    });
-
-    console.log(arrayTransactions);
-
-    arrayTransactions.forEach(function (trans, i, arr) {
-        setTimeout(function() {
-            container.innerHTML = '';
-            const card = document.createElement('div');
-            card.setAttribute('class', 'card');
-            console.log(trans.from);
-            message.textContent = getTitlefromMinterscan(trans.from) + ' just sent you ' + getSum(trans.value) + ' ' + trans.coin + "!";
-
-            if (trans.payload !== "") {
-                comment.textContent = b64DecodeUnicode(trans.payload)
-            } else {
-                comment.textContent = ""
-            };
-
-            sfx.play();
-            container.appendChild(logo);
-            container.appendChild(message);
-            container.appendChild(comment);
-
-            if (max_txn < trans.id){max_txn=trans.id};
-        },10000);
-    });
 
 
+    let request = new XMLHttpRequest();
+    request.open('GET','https://explorer-api.apps.minter.network/api/v1/addresses/'+urlAddr+'/transactions', true);
 
-};
+    request.onload = function () {
+        let income = JSON.parse(this.response);
+        if (max_txn == 0) {
+            max_txn = Math.max.apply(Math, income.data.map(function (o) {
+                return o.txn;
+            }));
+        };
+
+        console.log(income.data);
+
+        container.innerHTML = '';
+        income.data.forEach(function (item, i, arr) {
+            if (item.txn > max_txn && item.data.value !== 0 && item.data.to == urlAddr) {
+                arrayTransactions.push(new Transaction(item.txn, item.from, item.data.coin, item.data.value, item.payload));
+            }
+        });
+    };
     request.send();
 },10000);
+
+
+
+
+console.log(arrayTransactions);
+
+const getTransaction = () => {
+    let transaction = arrayTransactions.shift;
+    if (transaction == null){
+        setTimeout(getTransaction,2000)
+    }else{
+        showAlert(transaction)
+    }
+};
+
+const showAlert = (trans) => {
+
+    const card = document.createElement('div');
+    card.setAttribute('class', 'card');
+    console.log(trans.from);
+    message.textContent = getTitlefromMinterscan(trans.from) + ' just sent you ' + getSum(trans.value) + ' ' + trans.coin + "!";
+
+    if (trans.payload !== "") {
+        comment.textContent = b64DecodeUnicode(trans.payload)
+    } else {
+        comment.textContent = ""
+    };
+
+    sfx.play();
+    container.appendChild(logo);
+    container.appendChild(message);
+    container.appendChild(comment);
+
+    if (max_txn < trans.id){max_txn=trans.id};
+
+    setTimeout(clearAlert,10000);
+};
+
+const clearAlert = () => {
+    container.innerHTML = '';
+    setTimeout(getTransaction,2000);
+};
+
+
+
+
