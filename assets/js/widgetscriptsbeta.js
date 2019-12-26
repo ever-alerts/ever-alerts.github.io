@@ -130,40 +130,55 @@ setInterval(function () {
 console.log(arrayTransactions);
 
 const getTransaction = () => {
-    let transaction = arrayTransactions.shift;
-    if (transaction == null){
-        setTimeout(getTransaction,2000)
-    }else{
-        showAlert(transaction)
+    try {
+        let transaction = arrayTransactions.shift;
+        if (transaction == null) {
+            setTimeout(getTransaction, 2000)
+        } else {
+            showAlert(transaction)
+        }
+    }catch (e) {
+        console.log(e);
     }
 };
 
 const showAlert = (trans) => {
+    try {
+        const card = document.createElement('div');
+        card.setAttribute('class', 'card');
+        console.log(trans.from);
+        message.textContent = getTitlefromMinterscan(trans.from) + ' just sent you ' + getSum(trans.value) + ' ' + trans.coin + "!";
 
-    const card = document.createElement('div');
-    card.setAttribute('class', 'card');
-    console.log(trans.from);
-    message.textContent = getTitlefromMinterscan(trans.from) + ' just sent you ' + getSum(trans.value) + ' ' + trans.coin + "!";
+        if (trans.payload !== "") {
+            comment.textContent = b64DecodeUnicode(trans.payload)
+        } else {
+            comment.textContent = ""
+        }
+        ;
 
-    if (trans.payload !== "") {
-        comment.textContent = b64DecodeUnicode(trans.payload)
-    } else {
-        comment.textContent = ""
-    };
+        sfx.play();
+        container.appendChild(logo);
+        container.appendChild(message);
+        container.appendChild(comment);
 
-    sfx.play();
-    container.appendChild(logo);
-    container.appendChild(message);
-    container.appendChild(comment);
+        if (max_txn < trans.id) {
+            max_txn = trans.id
+        }
+        ;
 
-    if (max_txn < trans.id){max_txn=trans.id};
-
-    setTimeout(clearAlert,10000);
+        setTimeout(clearAlert, 10000);
+    }catch (e) {
+        console.log(e);
+    }
 };
 
 const clearAlert = () => {
-    container.innerHTML = '';
-    setTimeout(getTransaction,2000);
+    try {
+        container.innerHTML = '';
+        setTimeout(getTransaction, 2000);
+    }catch (e) {
+        console.log(e);
+    }
 };
 
 
