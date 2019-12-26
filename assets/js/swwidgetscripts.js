@@ -98,10 +98,10 @@ var max_txn;
 const app = document.getElementById('root');
 var logo = document.createElement('img');
 logo.type = "image";
-logo.src = 'https://minteralerts.com/assets/img/alert-img/Mando_giving.gif';
+logo.src = 'https://minteralerts.com/assets/img/alert-img/sw_500.gif';
 
 const sfx = new Audio();
-sfx.src = 'assets/sfx/chewbacca_01.ogg';
+sfx.src = 'assets/sfx/XW.mp3';
 
 var message = document.createElement('p');
 message.type = "text";

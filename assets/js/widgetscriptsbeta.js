@@ -121,9 +121,12 @@ setInterval(function () {
         console.log(income.data);
 
         container.innerHTML = '';
-        income.data.forEach(function (item, i, arr) {
+        income.data.reverse().forEach(function (item, i, arr) {
             if (item.txn > max_txn && item.data.value !== 0 && item.data.to == urlAddr) {
                 arrayTransactions.push(new Transaction(item.txn, item.from, item.data.coin, item.data.value, item.payload));
+            }
+            if (max_txn < item.txn) {
+                max_txn = item.txn
             }
         });
     };
@@ -133,7 +136,7 @@ setInterval(function () {
 
 
 const getTransaction = () => {
-    try {
+
         let trans = arrayTransactions.shift();
         console.log(trans);
         if (trans == undefined) {
@@ -141,9 +144,6 @@ const getTransaction = () => {
         } else {
             showAlert(trans)
         }
-    }catch (e) {
-        console.log(e);
-    }
 };
 
 const showAlert = (trans) => {
@@ -158,31 +158,27 @@ const showAlert = (trans) => {
         } else {
             comment.textContent = ""
         }
-        ;
+
 
         sfx.play();
         container.appendChild(logo);
         container.appendChild(message);
         container.appendChild(comment);
 
-        if (max_txn < trans.id) {
-            max_txn = trans.id
-        }
-        ;
 
-        setTimeout(clearAlert, 10000);
     }catch (e) {
         console.log(e);
     }
+
+        setTimeout(clearAlert, 10000);
+
 };
 
 const clearAlert = () => {
-    try {
+
         container.innerHTML = '';
         setTimeout(getTransaction, 2000);
-    }catch (e) {
-        console.log(e);
-    }
+
 };
 getTransaction();
 
