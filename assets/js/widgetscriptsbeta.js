@@ -85,9 +85,15 @@ function getTitlefromMinterscan(incomAddr){
         }
 
     };
-
+try {
     req.send();
     return outb;
+}catch (e) {
+    console.log(e);
+    return 'Somebody'
+}
+
+
 }
 
 function getSum(str) {
@@ -126,16 +132,14 @@ setInterval(function () {
 
 
 
-
-console.log(arrayTransactions);
-
 const getTransaction = () => {
     try {
-        let transaction = arrayTransactions.shift;
-        if (transaction == null) {
+        let trans = arrayTransactions.shift();
+        console.log(trans);
+        if (trans == undefined) {
             setTimeout(getTransaction, 2000)
         } else {
-            showAlert(transaction)
+            showAlert(trans)
         }
     }catch (e) {
         console.log(e);
@@ -180,7 +184,5 @@ const clearAlert = () => {
         console.log(e);
     }
 };
-
-
-
+getTransaction();
 
