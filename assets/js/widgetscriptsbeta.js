@@ -21,8 +21,6 @@ container.setAttribute('class', 'container');
 const app = document.getElementById('root');
 app.appendChild(container);
 
-let max_txn=0;
-
 function Transaction(id,from,coin,value,payload){
     this.id=id;
     this.from=from;
@@ -31,6 +29,7 @@ function Transaction(id,from,coin,value,payload){
     this.payload=payload;
 }
 let arrayTransactions = new Array();
+let setOfLoaded = new Set();
 
 
 
@@ -105,32 +104,32 @@ function getSum(str) {
     }
 }
 setInterval(function () {
+    try {
 
+        let request = new XMLHttpRequest();
+        request.open('GET', 'https://explorer-api.apps.minter.network/api/v1/addresses/' + urlAddr + '/transactions', true);
 
-    let request = new XMLHttpRequest();
-    request.open('GET','https://explorer-api.apps.minter.network/api/v1/addresses/'+urlAddr+'/transactions', true);
-
-    request.onload = function () {
-        let income = JSON.parse(this.response);
-        if (max_txn == 0) {
-            max_txn = Math.max.apply(Math, income.data.map(function (o) {
-                return o.txn;
-            }));
+        request.onload = function () {
+            let income = JSON.parse(this.response);
+            //console.log(income.data);
+            if (setOfLoaded.size === 0) {
+                income.data.reverse().forEach(function (item, i, arr) {
+                    if (item.data.value !== 0 && item.data.to == urlAddr && !setOfLoaded.has(item.txn)) {
+                        setOfLoaded.add(item.txn);
+                    }
+                });
+            }
+            income.data.reverse().forEach(function (item, i, arr) {
+                if (item.data.value !== 0 && item.data.to == urlAddr && !setOfLoaded.has(item.txn)) {
+                    arrayTransactions.push(new Transaction(item.txn, item.from, item.data.coin, item.data.value, item.payload));
+                    setOfLoaded.add(item.txn);
+                }
+            });
         };
-
-        console.log(income.data);
-
-        container.innerHTML = '';
-        income.data.reverse().forEach(function (item, i, arr) {
-            if (item.txn > max_txn && item.data.value !== 0 && item.data.to == urlAddr) {
-                arrayTransactions.push(new Transaction(item.txn, item.from, item.data.coin, item.data.value, item.payload));
-            }
-            if (max_txn < item.txn) {
-                max_txn = item.txn
-            }
-        });
-    };
-    request.send();
+        request.send();
+    }catch (e) {
+        console.log(e);
+    }
 },10000);
 
 
@@ -138,7 +137,7 @@ setInterval(function () {
 const getTransaction = () => {
 
         let trans = arrayTransactions.shift();
-        console.log(trans);
+        //console.log(trans);
         if (trans == undefined) {
             setTimeout(getTransaction, 2000)
         } else {
@@ -150,7 +149,7 @@ const showAlert = (trans) => {
     try {
         const card = document.createElement('div');
         card.setAttribute('class', 'card');
-        console.log(trans.from);
+        //console.log(trans.from);
         message.textContent = getTitlefromMinterscan(trans.from) + ' just sent you ' + getSum(trans.value) + ' ' + trans.coin + "!";
 
         if (trans.payload !== "") {
