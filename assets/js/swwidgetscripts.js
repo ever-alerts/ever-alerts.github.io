@@ -1,25 +1,37 @@
-var txnMap = new Map();
-var highestTxn;
+let urlAddr = getUrlParams().addr;
+console.log(getUrlParams());
+let urlImg = getUrlParams().imgsrc;
 
+let logo = document.createElement('img');
+logo.type = "image";
+logo.src = 'https://minteralerts.com/assets/img/alert-img/sw_500.gif';
 
+const sfx = new Audio();
+sfx.src = 'assets/sfx/XW.mp3';
 
-function setTxnMapNewElement(newTxn, addr){
+let message = document.createElement('p');
+message.type = "text";
 
-    for (const txn of newTxn){
-        if (txn.data.txn>highestTxn && txn.data.from == addr){
-            txnMap.set(txn.data.txn,txn.data);
-        }
-    }
+let comment = document.createElement('pc');
+comment.type = "text";
 
+const container = document.createElement('div');
+container.setAttribute('class', 'container');
+
+const app = document.getElementById('root');
+app.appendChild(container);
+
+function Transaction(id,from,coin,value,payload){
+    this.id=id;
+    this.from=from;
+    this.coin=coin;
+    this.value=value;
+    this.payload=payload;
 }
+let arrayTransactions = new Array();
+let setOfLoaded = new Set();
 
-function getNextTxnMapElement(){
 
-    var min = Math.min.apply(Math,txnMap.keys());
-    var o = txnMap.get(min);
-    txnMap.delete(min);
-    return o;
-}
 
 function getUrlParams (url) {
     // http://stackoverflow.com/a/23946023/2407309
@@ -54,28 +66,32 @@ function b64DecodeUnicode(str) {
 }
 
 
-var req = new XMLHttpRequest();
 
 function getTitlefromMinterscan(incomAddr){
-
+    let req = new XMLHttpRequest();
     let outb;
 
     req.open('GET', 'https://minterscan.pro/profiles/'+incomAddr, false);
-    
-        req.onload = function () {
 
-            if (req.status != 404){
+    req.onload = function () {
 
-                let inc = JSON.parse(this.response);
-                outb = inc.title;
-            } else {
-                outb = 'Кто-то';
-            }
+        if (req.status != 404){
 
-        };
+            let inc = JSON.parse(this.response);
+            outb = inc.title;
+        } else {
+            outb = 'Кто-то';
+        }
 
-    req.send();
-    return outb;
+    };
+    try {
+        req.send();
+        return outb;
+    }catch (e) {
+        console.log(e);
+        return 'Кто-то'
+    }
+
 
 }
 
@@ -87,80 +103,88 @@ function getSum(str) {
         return parseFloat(str);
     }
 }
-
-
-var urlAddr = getUrlParams().addr;
-console.log(getUrlParams());
-var urlImg = getUrlParams().imgsrc;
-var last_txn;
-var max_txn;
-
-const app = document.getElementById('root');
-var logo = document.createElement('img');
-logo.type = "image";
-logo.src = 'https://minteralerts.com/assets/img/alert-img/sw_500.gif';
-
-const sfx = new Audio();
-sfx.src = 'assets/sfx/XW.mp3';
-
-var message = document.createElement('p');
-message.type = "text";
-
-var comment = document.createElement('pc');
-comment.type = "text";
-
-const container = document.createElement('div');
-container.setAttribute('class', 'container');
-
-app.appendChild(container);
-
-
-
 setInterval(function () {
+    try {
 
-   container.innerHTML = '';
+        let request = new XMLHttpRequest();
+        request.open('GET', 'https://explorer-api.apps.minter.network/api/v1/addresses/' + urlAddr + '/transactions', true);
 
-var request = new XMLHttpRequest();
-request.open('GET','https://explorer-api.apps.minter.network/api/v1/addresses/'+urlAddr+'/transactions', true);
-//?addr=Mx5505f59922b452cb69587c93b5e52f8d0464f622
+        request.onload = function () {
+            let income = JSON.parse(this.response);
+            //console.log(income.data);
+            if (setOfLoaded.size === 0) {
+                income.data.reverse().forEach(function (item, i, arr) {
+                    if (item.data.value !== 0 && item.data.to == urlAddr && !setOfLoaded.has(item.txn)) {
+                        setOfLoaded.add(item.txn);
+                    }
+                });
+            }
+            income.data.reverse().forEach(function (item, i, arr) {
+                if (item.data.value !== 0 && item.data.to == urlAddr && !setOfLoaded.has(item.txn)) {
+                    arrayTransactions.push(new Transaction(item.txn, item.from, item.data.coin, item.data.value, item.payload));
+                    setOfLoaded.add(item.txn);
+                }
+            });
+        };
+        request.send();
 
-request.onload = function () {
+    }catch (e) {
+        console.log(e);
+    }
+},10000);
 
-    var income =JSON.parse(this.response);
 
-    max_txn = Math.max.apply(Math, income.data.map(function(o) { return o.txn; }));
-    highestTxn = max_txn;
 
-    //console.log(max_txn);
+const getTransaction = () => {
+    console.log(arrayTransactions);
+    let trans = arrayTransactions.shift();
+    //console.log(trans);
+    if (trans == undefined) {
+        setTimeout(getTransaction, 2000)
+    } else {
+        showAlert(trans)
+    }
+};
 
-    //container.appendChild(logo);
-
-if ((max_txn > last_txn)&&(income.data[0].data.to == urlAddr)){
-    var max_txn_obj = income.data[0];
-
-    if (getSum(max_txn_obj.data.value)!==0){
-    //console.log(max_txn_obj);
+const showAlert = (trans) => {
+    try {
         const card = document.createElement('div');
         card.setAttribute('class', 'card');
-        console.log(max_txn_obj.from);
+        //console.log(trans.from);
+        message.textContent = getTitlefromMinterscan(trans.from) + ' прислал ' + getSum(trans.value) + ' ' + trans.coin + "!";
 
-        message.textContent = getTitlefromMinterscan(max_txn_obj.from)+' прислал ' + (getSum(max_txn_obj.data.value)) + ' ' + max_txn_obj.data.coin + "!";
-        if (max_txn_obj.payload !== ""){comment.textContent = b64DecodeUnicode(max_txn_obj.payload)}else{comment.textContent = ""};
+        if (trans.payload !== "") {
+            comment.textContent = b64DecodeUnicode(trans.payload)
+        } else {
+            comment.textContent = ""
+        }
+
+
         sfx.play();
         container.appendChild(logo);
         container.appendChild(message);
         container.appendChild(comment);
-    //container.appendChild(sfx);
 
-    last_txn = max_txn;
+
+    }catch (e) {
+        console.log(e);
     }
-}
 
+    setTimeout(clearAlert, 10000);
 
 };
 
+const clearAlert = () => {
 
-    request.send();
+    container.innerHTML = '';
+    setTimeout(getTransaction, 2000);
 
-last_txn = max_txn;
-},10000);
+};
+getTransaction();
+
+
+
+//logo.src = 'https://minteralerts.com/assets/img/alert-img/sw_500.gif';
+//
+// const sfx = new Audio();
+// sfx.src = 'assets/sfx/XW.mp3';
