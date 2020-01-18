@@ -142,7 +142,12 @@ const getTransaction = () => {
     if (trans == undefined) {
         setTimeout(getTransaction, 2000)
     } else {
-        showAlert(trans)
+        if((trans.coin == 'BIP' && getSum(trans.value) <10))
+        {
+            setTimeout(getTransaction, 2000)
+        }else {
+            showAlert(trans)
+        }
     }
 };
 
