@@ -13,7 +13,7 @@ function generate(lang) {
         lang = lang.lngnow;
     }
 
-    outputAddr.value = 'http://minteralerts.com/widget.html?addr='+inputAddr.value+'&imgsrc='+imagesource+'&lang='+lang;
+    outputAddr.value = 'http://207.154.223.56/tonwidget.html?addr='+inputAddr.value+'&imgsrc='+imagesource+'&lang='+lang;
 }
 
 function sfxGetter(id) {
