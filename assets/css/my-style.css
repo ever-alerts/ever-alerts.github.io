@@ -127,16 +127,16 @@ input::placeholder {
 }
 
 .gradient-01 {
-    background: radial-gradient(circle closest-side, #d15c22, transparent);
+    background: radial-gradient(circle closest-side, #3a8ad7, transparent);
     filter: brightness(140%);
 }
 
 .gradient-02 {
-    background: radial-gradient(circle closest-side, #ff9542, transparent);
+    background: radial-gradient(circle closest-side, #4F95DA, transparent);
 }
 
 .gradient-03 {
-    background: radial-gradient(circle closest-side, #f24841, transparent);
+    background: radial-gradient(circle closest-side, #1776d4, transparent);
     filter: brightness(140%);
 }
 
