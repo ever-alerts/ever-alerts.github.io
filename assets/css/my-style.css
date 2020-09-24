@@ -207,7 +207,7 @@ header .container-big {
 }
 
 .logo span {
-    color: #ff9542;
+    color: #42b3ff;
 }
 
 .telegram {
@@ -281,7 +281,7 @@ header .container-big {
 }
 
 .active-hamburger span {
-    background: #d15c22;
+    background: #42b3ff;
 }
 
 .active-hamburger span:nth-child(1) {
@@ -354,7 +354,7 @@ header .container-big {
     margin-left: calc(50vw - 98.5px);
     margin-bottom: 30px;
     color: #fff;
-    background: #d15c22;
+    background: #42b3ff;
 }
 
 .lang-btn {
@@ -429,7 +429,7 @@ h1 {
 h2 {
     font-size: 48px;
     line-height: 60px;
-    color: #ff9542;
+    color: #42b3ff;
 }
 
 .top-slide__btn {
@@ -446,12 +446,12 @@ h2 {
     letter-spacing: 1px;
     position: relative;
     overflow: hidden;
-    background: #d15c22;
+    background: #42b3ff;
 }
 
 .top-slide .btn-right {
     margin-left: 48px;
-    background: #ff9542;
+    background: #42b3ff;
 }
 
 /*===== Order-Process ====================*/
@@ -578,7 +578,7 @@ h2 {
     overflow: hidden;
     font: 24px/66px SegoeUIBold, sans-serif;
     color: #fff;
-    background: #f24841;
+    background: #42b3ff;
     margin-bottom: 63px;
 }
 

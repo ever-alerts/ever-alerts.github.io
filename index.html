@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Minter Alerts - Send and receive donations with ease</title>
+    <title>TON Alerts - Send and receive donations with ease</title>
 	<meta name="description" content="">
     <meta charset="UTF-8">
-    <meta name="projectmntaddr" content="Mx4e7ddc092d4fa12c44792d9a6ffdba6122900df1">
-    <meta name="authormntaddr" content="Mx5505f59922b452cb69587c93b5e52f8d0464f622">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+	<!--<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
 	<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
 	<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
@@ -19,7 +17,7 @@
 	<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">-->
 	<link rel="manifest" href="./manifest.json">
 	<meta name="msapplication-TileColor" content="#ffffff">
 	<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
@@ -30,13 +28,13 @@
     <link rel="stylesheet" href="assets/css/my-style.css">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-153161930-1"></script>
-    <script>
+<!--    <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
 
         gtag('config', 'UA-153161930-1');
-    </script>
+    </script>-->
 
 </head>
 <body>
@@ -44,14 +42,8 @@
     <!--Start Header-->
     <header>
         <div class="container-big">
-            <a href="/" class="logo">Minter<span>Alerts</span></a>
-            <a href="https://t.me/MinterAlerts" class="telegram" target="_blank">
-               <svg viewBox="0 0 180 60" class="border" preserveAspectRatio="none">
-                  <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
-                  <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
-                </svg>
-                <span>Telegram</span><img src="assets/img/svg/telegram.svg" alt="">
-            </a>
+            <a href="/" class="logo">TON<span>Alerts</span></a>
+
             <div class="lang-btn">
                 <button data-index="0" class="btn lang-btn__active js-lang-active" onclick="redrawlng('en')">Eng</button>
                 <button data-index="2" class="btn" onclick="redrawlng('ru')">Rus</button>
@@ -91,10 +83,6 @@
                     <span class="btn-effect gradient-01"></span>
                     <span class="replacer btn-text" lng="show_me_how">Show me how</span>
                 </a>
-                <a class="btn btn-right" href="#information">
-                    <span class="btn-effect gradient-02"></span>
-                    <div class="replacer btn-text" lng="why">Why is it better?</div>
-                </a>
             </div>
         </div>
     </section>
@@ -104,25 +92,11 @@
         <div class="container-middle">
             <!--Start Wallet-Number-->
             <div class="wallet-number" id="wallet">
-                <h3 class="replacer" lng="enter_your_wallet">Enter your Minter wallet address</h3>
-                <h3 class="replacer mobil-h3" lng="enter_your_wallet">1.Enter your Minter wallet address</h3>
+                <h3 class="replacer" lng="enter_your_wallet">Enter your TON wallet address</h3>
+                <h3 class="replacer mobil-h3" lng="enter_your_wallet">1.Enter your TON wallet address</h3>
                 <form>
-                    <input type="text" id="inputAddr"  lng="format" placeholder="Format: Mx4e7ddc092d4fa12c44792d9a6ffdba6122900df1">
-                    <a target="_blank" href="https://en.minter.wiki/How_to_create_wallet" class="input-subtext" hl = "how_to_wallet" lng="create_wallet">Don't have a wallet? Look how to create it.</a>
-                    <!--<a class="btn btn-left" hl = "console_minter" href="https://console.minter.network/" target="_blank">
-                        <span class="replacer" lng="create_wallet">create wallet</span>
-                        <svg viewBox="0 0 180 60" class="border" preserveAspectRatio="none">
-                          <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
-                          <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
-                        </svg>
-                   </a>
-                    <a class="btn js-replace-link" hl = "how_to_wallet" href="https://en.minter.wiki/How_to_create_wallet" target="_blank">
-                        <span class="replacer" lng="instruction">instruction</span>
-                        <svg viewBox="0 0 180 60" class="border" preserveAspectRatio="none">
-                          <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
-                          <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
-                        </svg>
-                    </a>-->
+                    <input type="text" id="inputAddr"  lng="format" placeholder="Format: 0:f45ad679f80eb1aecad3a49771ebec4dfb6dcfb01eb17d72d201b56b6f2f46bb">
+
                     <button type="button" data-target="alert-scroll" class="btn js-to-scroll-next js-replace-link">
                         <span class="replacer next-txt" lng="next">next</span>
                         <svg viewBox="0 0 180 60" class="border" preserveAspectRatio="none">
@@ -207,106 +181,16 @@
     </section>
     <!--End Examples-->
     <!--Start Information-->
-    <section class="information" id="information">
-        <div class="container-big">
-            <h3 class="replacer" lng="advantages">Advantages of blockchain donations</h3>
-            <p class="replacer" lng="processed_with_safe">All transactions processed with a safe and secure Minter blockchain.</p>
-            <div class="advantages-items">
-                <div class="advantages__item item-01">
-                    <h4 class="replacer" lng="withdrawal">Withdrawal without<br>barriers</h4>
-                    <p class="replacer" lng="no_limits">No limits for withdrawals,<br>your money is your<br>money</p>
-                    <img class="item-img-01" src="assets/img/svg/shadow.svg" alt="">
-                    <img class="item-img-02" src="assets/img/svg/box.svg" alt="">
-                    <img class="item-img-03" src="assets/img/svg/poligon.svg" alt="">
-                    <img class="item-img-04" src="assets/img/svg/money.svg" alt="">
-                    <img class="item-img-05" src="assets/img/svg/arrow.svg" alt="">
-                </div>
-                <div class="advantages__item item-02">
-                    <h4 class="replacer" lng="fee">Transaction fee less<br>than $0.001</h4>
-                    <p class="replacer" lng="low_fees">Near-to-impossible low<br>transaction fees</p>
-                    <img class="item-img-01" src="assets/img/svg/shadow.svg" alt="">
-                    <img class="item-img-02" src="assets/img/svg/box.svg" alt="">
-                    <img class="item-img-03" src="assets/img/svg/poligon.svg" alt="">
-                    <img class="item-img-04" src="assets/img/svg/money_4.svg" alt="">
-                    <img class="item-img-05" src="assets/img/svg/money_3.svg" alt="">
-                    <img class="item-img-06" src="assets/img/svg/money_2.svg" alt="">
-                    <img class="item-img-07" src="assets/img/svg/sector.svg" alt="">
-                </div>
-                <div class="advantages__item item-03">
-                    <h4 class="replacer" lng="fast_speed">Very fast transaction<br>speed</h4>
-                    <p class="replacer" lng="5_sec">5 sec. to send or receive<br>a donation</p>
-                    <img class="item-img-01" src="assets/img/svg/shadow.svg" alt="">
-                    <img class="item-img-02" src="assets/img/svg/box-v2.svg" alt="">
-                    <img class="item-img-shadow" src="assets/img/shadow.png" alt="">
-                    <img class="item-img-03" src="assets/img/svg/poligon.svg" alt="">
-                    <img class="item-img-04" src="assets/img/money_blur_bot.png" alt="">
-                    <img class="item-img-05" src="assets/img/money_blur_shadow.png" alt="">
-                    <img class="item-img-06" src="assets/img/money_blur_top.png" alt="">
-                </div>
-                <div class="advantages__item item-04">
-                    <h4 class="replacer" lng="exchange_with_ease">Exchange with<br>ease</h4>
-                    <p class="replacer" lng="easily_exchanged">Your coins can be easily<br>exchanged to Bitcoin,<br>Ethereum or Tether</p>
-                    <img class="item-img-01" src="assets/img/svg/shadow.svg" alt="">
-                    <img class="item-img-02" src="assets/img/svg/box.svg" alt="">
-                    <img class="item-img-03" src="assets/img/svg/poligon.svg" alt="">
-                    <img class="item-img-04" src="assets/img/svg/tether.svg" alt="">
-                    <img class="item-img-05" src="assets/img/svg/ethereum.svg" alt="">
-                    <img class="item-img-06" src="assets/img/svg/bitcoin.svg" alt="">
-                </div>
-            </div>
-            <div class="advantages-slider">
-                <div class="advantages-slider__item">
-                    <h4 class="replacer" lng="withdrawal">Withdrawal without<br>barriers</h4>
-                    <p class="replacer" lng="no_limits">No limits for withdrawals,<br>your money is your<br>money</p>
-                    <img src="assets/img/img-s1.png" alt="">
-                </div>
-                <div class="advantages-slider__item">
-                    <h4 class="replacer" lng="fee">Transaction fee less<br>than $0.001</h4>
-                    <p class="replacer" lng="low_fees">Near-to-impossible low<br>transaction fees</p>
-                    <img src="assets/img/img-s2.png" alt="">
-                </div>
-                <div class="advantages-slider__item">
-                    <h4 class="replacer" lng="fast_speed">Very fast transaction<br>speed</h4>
-                    <p class="replacer" lng="5_sec">5 sec. to send or receive<br>a donation</p>
-                    <img src="assets/img/img-s3.png" alt="">
-                </div>
-                <div class="advantages-slider__item">
-                    <h4 class="replacer" lng="exchange_with_ease">Exchange with<br>ease</h4>
-                    <p class="replacer" lng="easily_exchanged">Your coins can be easily<br>exchanged to Bitcoin,<br>Ethereum or Tether</p>
-                    <img src="assets/img/img-s4.png" alt="">
-                </div>
-            </div>
-            <div class="container-small">
-                <a class="btn" hl = "1001" href="https://minter.1001btc.com/en/" target="_blank">
-                    <span class="btn-effect gradient-05"></span>
-                    <span class="replacer btn-text" lng="exchange">Exchange your coins here</span>
-                </a>
-                <h4 class="replacer" lng="what_is_minter">What is Minter blockchain?</h4>
-                <p><span class="replacer" lng="minter_is">Minter is a blockchain network that lets people, projects, and companies
-                create and manage their own coins and exchange them at a fair price
-                with absolute and instant liquidity. Find more info on their official
-                    website</span> <a href="https://www.minter.network" target="_blank">www.minter.network</a></p>
-            </div>
-        </div>
-    </section>
+
     <!--End Information-->
     <!--Start Footer-->
     <footer>
         <div class="container-small">
-            <a href="/" class="replacer logo foot-logo">Minter<span>Alerts</span></a>
-            <a href="https://t.me/MinterAlerts" class="telegram" target="_blank">
-               <svg viewBox="0 0 180 60" class="border" preserveAspectRatio="none">
-                  <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
-                  <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
-                </svg>
-                <span class="replacer">Telegram</span><img src="assets/img/svg/telegram.svg" alt="">
-            </a>
+            <a href="/" class="replacer logo foot-logo">TON<span>Alerts</span></a>
+
             <p class="replacer" lng_="mother_minter">Designed with <img id="heart" src="assets/img/svg/heart.svg" alt=""> by <a href="https://motherminter.org/" target="_blank">Mother Minter</a></p>
         </div>
     </footer>
-	<div class="donate">
-		Donate to the service: <span>Mx4e7ddc092d4fa12c44792d9a6ffdba6122900df1</span>
-	</div>
     <!--End Footer-->
     <!--End Page-->
     <!--Start Scripts-->
