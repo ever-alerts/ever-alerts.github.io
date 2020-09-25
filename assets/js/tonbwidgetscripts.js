@@ -4,7 +4,7 @@ let urlImg = getUrlParams().imgsrc;
 
 let logo = document.createElement('img');
 logo.type = "image";
-logo.src = 'https://minteralerts.com/assets/img/alert-img/ruby.gif';
+logo.src = urlImg;
 
 const sfx = new Audio();
 sfx.src = 'assets/sfx/11119_1393961437.mp3';
