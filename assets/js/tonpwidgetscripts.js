@@ -85,7 +85,7 @@ setInterval(function () {
                 query:"query{transactions(filter:{account_addr:{eq:\""+urlAddr+"\"}balance_delta: {gt: \"0\"}} orderBy:{ path: \"now\", direction: DESC}){id now account_addr balance_delta in_message{value}}}"
             });
 
-        request.open('POST', "https://net.ton.dev/graphql")
+        request.open('POST', "https://main.ton.dev/graphql")
         request.setRequestHeader("Content-Type", "application/json")
         request.send(data);
 
@@ -132,8 +132,8 @@ const showAlert = (trans) => {
         //console.log(trans.from);
         message.textContent = 'Somebody just sent you ' + getSum(trans.value)/1000000000 + ' ' + trans.coin + "!";
 
-        if (trans.payload === "") {
-            comment.textContent = trans.payload
+        if (trans.payload !== "") {
+            comment.textContent = trans.payload.slice(9)
         } else {
             comment.textContent = ""
         }
