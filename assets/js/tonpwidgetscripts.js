@@ -133,7 +133,7 @@ const showAlert = (trans) => {
         message.textContent = 'Somebody just sent you ' + getSum(trans.value)/1000000000 + ' ' + trans.coin + "!";
 
         if (trans.payload !== "") {
-            comment.textContent = trans.payload.slice(9)
+            comment.textContent = b64DecodeUnicode(trans.payload).slice(9)
         } else {
             comment.textContent = ""
         }
