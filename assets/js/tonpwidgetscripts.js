@@ -31,8 +31,6 @@ function Transaction(id,from,coin,value,payload){
 let arrayTransactions = new Array();
 let setOfLoaded = new Set();
 
-
-
 function getUrlParams (url) {
     // http://stackoverflow.com/a/23946023/2407309
     if (typeof url == 'undefined') {
@@ -57,14 +55,6 @@ function getUrlParams (url) {
     }
     return urlParams
 }
-
-function b64DecodeUnicode(str) {
-    // Going backwards: from bytestream, to percent-encoding, to original string.
-    return decodeURIComponent(atob(str).split('').map(function(c) {
-        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-    }).join(''));
-}
-
 
 
 function getSum(str) {
@@ -101,7 +91,7 @@ setInterval(function () {
             }
             income.data.transactions.reverse().forEach(function (item, i, arr) {
                 if (item.balance_delta.value !== 0 && !setOfLoaded.has(item.id)) {
-                    arrayTransactions.push(new Transaction(item.id, item.account_addr, "Crystals", item.balance_delta, item.in_message.value));
+                    arrayTransactions.push(new Transaction(item.id, item.account_addr, "Crystals", item.balance_delta, item.in_message.body));
                     setOfLoaded.add(item.id);
                 }
             });
@@ -133,7 +123,7 @@ const showAlert = (trans) => {
         message.textContent = 'Somebody just sent you ' + getSum(trans.value)/1000000000 + ' ' + trans.coin + "!";
 
         if (trans.payload !== "") {
-            comment.textContent = b64DecodeUnicode(trans.payload).slice(9)
+            comment.textContent = atob(trans.payload).toString().slice(9)
         } else {
             comment.textContent = ""
         }
