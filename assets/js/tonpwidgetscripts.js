@@ -72,7 +72,7 @@ setInterval(function () {
         let data =
             JSON.stringify({
                 //urlAddr
-                query:"query{transactions(filter:{account_addr:{eq:\""+urlAddr+"\"}balance_delta: {gt: \"0\"}} orderBy:{ path: \"now\", direction: DESC}){id now account_addr balance_delta in_message{value}}}"
+                query:"query{transactions(filter:{account_addr:{eq:\""+urlAddr+"\"}balance_delta: {gt: \"0\"}} orderBy:{ path: \"now\", direction: DESC}){id now account_addr balance_delta in_message{body}}}"
             });
 
         request.open('POST', "https://main.ton.dev/graphql")
@@ -124,6 +124,7 @@ const showAlert = (trans) => {
 
         if (trans.payload !== "") {
             comment.textContent = atob(trans.payload).toString().slice(9)
+            //comment.textContent = ""
         } else {
             comment.textContent = ""
         }
