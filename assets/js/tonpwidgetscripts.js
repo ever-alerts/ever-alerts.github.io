@@ -115,6 +115,10 @@ const getTransaction = () => {
         }
 };
 
+function u_atob(ascii) {
+    return Uint8Array.from(atob(ascii), c => c.charCodeAt(0));
+}
+
 const showAlert = (trans) => {
     try {
         const card = document.createElement('div');
@@ -123,7 +127,7 @@ const showAlert = (trans) => {
         message.textContent = 'Somebody just sent you ' + getSum(trans.value)/1000000000 + ' ' + trans.coin + "!";
 
         if (trans.payload !== "") {
-            comment.textContent = atob(trans.payload).toString().slice(9)
+            comment.textContent = new TextDecoder().decode(u_atob(trans.payload)).slice(10)
             //comment.textContent = ""
         } else {
             comment.textContent = ""
