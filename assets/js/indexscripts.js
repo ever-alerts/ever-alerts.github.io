@@ -13,7 +13,7 @@ function generate(lang) {
         lang = lang.lngnow;
     }
 
-    outputAddr.value = 'https://tonalerts.com/tonpwidget.html?addr='+inputAddr.value.toLowerCase()+'&imgsrc='+imagesource+'&lang='+lang;
+    outputAddr.value = 'https://ever-alerts.github.io/tonpwidget.html?addr='+inputAddr.value.toLowerCase()+'&imgsrc='+imagesource+'&lang='+lang;
 }
 
 function sfxGetter(id) {
