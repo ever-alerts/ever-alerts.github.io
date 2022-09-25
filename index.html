@@ -1,48 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>TON Alerts - Send and receive donations with ease</title>
-	<meta name="description" content="">
+    <title>Send and receive donations with ease — EVER alerts</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!--<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-	<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-	<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-	<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-	<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-	<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-	<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">-->
-	<link rel="manifest" href="./manifest.json">
-	<meta name="msapplication-TileColor" content="#ffffff">
-	<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-	<meta name="theme-color" content="#ffffff">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WTWX48824B"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-WTWX48824B');
+    </script>
+
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="slick/slick.css">
     <link rel="stylesheet" href="slick/slick-theme.css">
     <link rel="stylesheet" href="assets/css/my-style.css">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-153161930-1"></script>
-<!--    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'UA-153161930-1');
-    </script>-->
-
 </head>
 <body>
     <!--Start Page-->
     <!--Start Header-->
     <header>
         <div class="container-big">
-            <a href="/" class="logo">TON<span>Alerts</span></a>
+            <a href="/" class="logo">EVER <span>Alerts</span></a>
 
             <div class="lang-btn">
                 <button data-index="0" class="btn lang-btn__active js-lang-active" onclick="redrawlng('en')">Eng</button>
@@ -64,7 +49,6 @@
         </div>
         <ul class="nav">
             <li><a href="#alerts" onclick="hideMenu()">Alerts</a></li>
-            <li><a href="#examples" onclick="hideMenu()">examples</a></li>
             <li><a href="#wallet" onclick="hideMenu()">wallet</a></li>
         </ul>
         <button class="btn" onclick="hideMenu()">Close</button>
@@ -90,8 +74,8 @@
         <div class="container-middle">
             <!--Start Wallet-Number-->
             <div class="wallet-number" id="wallet">
-                <h3 class="replacer" lng="enter_your_wallet">Enter your TON wallet address</h3>
-                <h3 class="replacer mobil-h3" lng="enter_your_wallet">1.Enter your TON wallet address</h3>
+                <h3 class="replacer" lng="enter_your_wallet">Enter your EVER wallet address</h3>
+                <h3 class="replacer mobil-h3" lng="enter_your_wallet">1.Enter your EVER wallet address</h3>
                 <form>
                     <input type="text" id="inputAddr"  lng="format" placeholder="Format: 0:f45ad679f80eb1aecad3a49771ebec4dfb6dcfb01eb17d72d201b56b6f2f46bb">
 
@@ -110,9 +94,6 @@
                 <h3 class="alert-scroll replacer" lng="pick_up_the_image">pick up the image</h3>
                 <h3 class="alert-scroll replacer mobil-h3" lng="pick_up_the_image">2.pick up the image</h3>
                 <div class="alert-items">
-                    <div class="alert__item" tabindex="0">
-                        <img src="assets/img/alert-img/1.gif" alt="" id="Img_1">
-                    </div>
                     <div class="alert__item" tabindex="0">
                         <img src="assets/img/alert-img/2.gif" alt="" id="Img_2">
                     </div>
@@ -168,31 +149,11 @@
         </div>
     </section>
     <!--End Order-Process-->
-    <!--Start Examples-->
-    <section class="examples" id="examples">
-        <div class="container-big">
-            <h3 class="replacer" lng="examples">examples</h3>
-			<div class="video">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/K0vkNs6tOz4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-        </div>
-    </section>
-    <!--End Examples-->
     <!--Start Information-->
 
     <!--End Information-->
     <!--Start Footer-->
     <footer>
-        <div class="container-middle">
-
-
-            <div class="donate">
-                Donate to the service: <span>0:f45ad679f80eb1aecad3a49771ebec4dfb6dcfb01eb17d72d201b56b6f2f46bb</span>
-            </div>
-        </div>
-        <!--<div class="container-small">
-            <a href="/" class="replacer logo foot-logo">TON<span>Alerts</span></a>
-        </div>-->
     </footer>
     <!--End Footer-->
     <!--End Page-->
