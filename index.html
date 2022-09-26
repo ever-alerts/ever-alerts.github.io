@@ -30,8 +30,8 @@
             <a href="/" class="logo">EVER <span>Alerts</span></a>
 
             <div class="lang-btn">
-                <button data-index="0" class="btn lang-btn__active js-lang-active" onclick="redrawlng('en')">Eng</button>
-                <button data-index="2" class="btn" onclick="redrawlng('ru')">Rus</button>
+                <button data-index="0" class="btn lang-btn__active js-lang-active" onclick="langSwitch('en')">Eng</button>
+                <button data-index="2" class="btn" onclick="langSwitch('ru')">Rus</button>
             </div>
         </div>
     </header>
@@ -44,8 +44,8 @@
     </div>
     <div class="menu">
         <div class="lang-btn__mobil">
-            <button data-index="0" class="btn js-lang-active" onclick="redrawlng('en')"><img src="assets/img/svg/flag_kingdom.svg" alt=""></button>
-            <button data-index="2" class="btn" onclick="redrawlng('ru')"><img src="assets/img/svg/flag_russia.svg" alt=""></button>
+            <button data-index="0" class="btn js-lang-active" onclick="langSwitch('en')"><img src="assets/img/svg/flag_kingdom.svg" alt=""></button>
+            <button data-index="2" class="btn" onclick="langSwitch('ru')"><img src="assets/img/svg/flag_russia.svg" alt=""></button>
         </div>
         <ul class="nav">
             <li><a href="#alerts" onclick="hideMenu()">Alerts</a></li>
@@ -161,7 +161,6 @@
     <script src="assets/js/jQuery.min.js"></script>
     <script src="slick/slick.min.js"></script>
     <script src="assets/js/custom.js"></script>
-    <script src="assets/js/indexscripts.js"></script>
-    <script src="assets/js/langswitch.js"></script>
+    <script src="assets/js/scripts.js"></script>
 </body>
 </html>
